@@ -21,6 +21,7 @@ class YoutubePlayerValue {
   YoutubePlayerValue({
     this.isReady = false,
     this.isControlsVisible = false,
+    this.isShowPlayButton = false,
     this.hasPlayed = false,
     this.position = const Duration(),
     this.buffered = 0.0,
@@ -41,6 +42,9 @@ class YoutubePlayerValue {
 
   /// Defines whether or not the controls are visible.
   final bool isControlsVisible;
+
+  /// Defines whether or not the play button are visible.
+  final bool isShowPlayButton;
 
   /// Returns true once the video start playing for the first time.
   final bool hasPlayed;

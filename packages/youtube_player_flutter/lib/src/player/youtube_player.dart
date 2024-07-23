@@ -51,6 +51,7 @@ class YoutubePlayer extends StatefulWidget {
     ProgressBarColors? progressColors,
     this.onReady,
     this.onEnded,
+    this.onChangePlayState,
     this.liveUIColor = Colors.red,
     this.topActions,
     this.bottomActions,
@@ -111,6 +112,8 @@ class YoutubePlayer extends StatefulWidget {
   /// Returns [YoutubeMetaData] for the video that has just ended playing.
   /// {@endtemplate}
   final void Function(YoutubeMetaData metaData)? onEnded;
+
+  final void Function(bool)? onChangePlayState;
 
   /// {@template youtube_player_flutter.liveUIColor}
   /// Overrides color of Live UI when enabled.
@@ -401,8 +404,10 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
             ),
           ],
           if (!controller.flags.hideControls)
-            const Center(
-              child: PlayPauseButton(),
+            Center(
+              child: PlayPauseButton(
+                onChangePlayState: widget.onChangePlayState,
+              ),
             ),
           if (controller.value.hasError) errorWidget,
         ],
