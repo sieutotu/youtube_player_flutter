@@ -74,7 +74,7 @@ class _YoutubePlayerBuilderState extends State<YoutubePlayerBuilder>
           if (controller.value.isFullScreen) {
             widget.player.controller.toggleFullScreenMode();
           } else {
-           
+
           }
         },
         child: widget.player,
