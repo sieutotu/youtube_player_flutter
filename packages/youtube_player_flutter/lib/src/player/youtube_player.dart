@@ -342,10 +342,6 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
               ),
             ),
           if (!controller.flags.hideControls) ...[
-            TouchShutter(
-              disableDragSeek: controller.flags.disableDragSeek,
-              timeOut: widget.controlsTimeOut,
-            ),
             Positioned(
               bottom: 0,
               left: 0,
